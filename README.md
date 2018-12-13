@@ -3,6 +3,8 @@
 `extend-stack` offers two util methods `extendStack` and `extendCb` that make it easier
 to track async errors in callback systems.
 
+[![Build Status](https://travis-ci.org/martinheidegger/extend-stack.svg?branch=master)](https://travis-ci.org/martinheidegger/extend-stack)
+
 ## Installation and Setup
 
 ```shell
@@ -33,7 +35,7 @@ The two methods are exposed as object:
 const { extendStack, extendCb } = require('extend-stack')
 ```
 
-## `extendCb(function (err, data) {})` → `function (err, data) {}`
+### `extendCb(function (err, data) {})` → `function (err, data) {}`
 
 `extendCb` adds the error stack of the calling function in case an error
 occurs.
@@ -83,6 +85,7 @@ setImmediate(userFunction)
 ```
 
 <div><em>(disabled)</em></div>
+
 ```
 Error: sample-error
     at Immediate.setImmediate [as _onImmediate] (/extend-stack/examples/extendCb-withStack.js:4:25)
@@ -92,6 +95,7 @@ Error: sample-error
 ```
 
 <div><em>(enabled)</em></div>
+
 ```
 Error: sample-error
     at Immediate.userFunction (/extend-stack/examples/extendCb-withStack.js:9:5)
@@ -105,7 +109,7 @@ Error: sample-error
     at processImmediate [as _immediateCallback] (timers.js:722:5)
 ```
 
-## `extendStack(err, [offset])` → `Error`
+### `extendStack(err, [offset])` → `Error`
 
 `extendStack` extends the stack stored in `err` and adds the current line's stack as well.
 
@@ -123,6 +127,7 @@ setImmediate(() => {
 ```
 
 <div><em>(disabled)</em></div>
+
 ```
 Error: some-error
     at Immediate.setImmediate (/extend-stack/examples/extendStack.js:8:25)
@@ -132,6 +137,7 @@ Error: some-error
 ```
 
 <div><em>(enabled)</em></div>
+
 ```
 Error: some-error
     at subsystem (/extend-stack/examples/extendStack.js:4:10)
