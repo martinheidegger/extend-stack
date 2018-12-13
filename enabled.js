@@ -27,6 +27,9 @@ function doExtend (err, offset, passStack) {
 }
 
 exports.extendCb = function (cb) {
+  if (cb === null || cb === undefined) {
+    return cb
+  }
   const stack = new Error().stack
   return function (err, data) {
     if (err === null || err === undefined) {

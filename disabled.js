@@ -11,6 +11,9 @@ function extendStack (err) {
 
 exports.extendStack = extendStack
 exports.extendCb = function extendCb (cb) {
+  if (cb === null || cb === undefined) {
+    return cb
+  }
   return function (err, data) {
     if (err) {
       cb(extendStack(err), data)

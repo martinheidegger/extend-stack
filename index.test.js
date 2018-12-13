@@ -34,6 +34,11 @@ const test = require('tape')
   })
 
   test(`[${name}] extendCb`, t => {
+    t.test('empty callback returns empty', t => {
+      t.equals(extendCb(null), null)
+      t.equals(extendCb(undefined), undefined)
+      t.end()
+    })
     t.test('callback with error', t => {
       const throwError = new Error('hello')
       extendCb((err, data) => {

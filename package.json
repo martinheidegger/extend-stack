@@ -1,7 +1,7 @@
 {
   "name": "extend-stack",
   "version": "1.0.0",
-  "description": "",
+  "description": "Two util methods `extendStack` and `extendCb` that make it easier to track async errors in callback systems.",
   "main": "index.js",
   "scripts": {
     "test": "npm run lint && npm run unit",
