@@ -1,0 +1,34 @@
+{
+  "name": "extend-stack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run lint && npm run unit",
+    "lint": "standard",
+    "unit": "tape *.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/martinheidegger/extend-stack.git"
+  },
+  "keywords": [
+    "async",
+    "callback",
+    "error",
+    "stack"
+  ],
+  "author": "Martin Heidegger <martin.heidegger@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/martinheidegger/extend-stack/issues"
+  },
+  "homepage": "https://github.com/martinheidegger/extend-stack#readme",
+  "devDependencies": {
+    "standard": "^12.0.1",
+    "tape": "^4.9.1"
+  },
+  "dependencies": {
+    "debug": "^4.1.0"
+  }
+}
