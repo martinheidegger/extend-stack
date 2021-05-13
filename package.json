@@ -25,8 +25,8 @@
   },
   "homepage": "https://github.com/martinheidegger/extend-stack#readme",
   "devDependencies": {
-    "standard": "^12.0.1",
-    "tape": "^4.9.1"
+    "standard": "^16.0.3",
+    "tape": "^5.2.2"
   },
   "dependencies": {
     "debug": "^4.1.0"

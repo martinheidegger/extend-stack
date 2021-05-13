@@ -3,6 +3,8 @@ sudo: false
 dist: trusty
 node_js:
   - 'node'
+  - '14'
+  - '12'
   - '10'
   - '8'
   - '6'

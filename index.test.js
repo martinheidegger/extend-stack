@@ -26,7 +26,7 @@ const test = require('tape')
     })
 
     t.test('Extending an object without message should add a standard message', t => {
-      let err = extendStack({ hello: 'world' })
+      const err = extendStack({ hello: 'world' })
       t.notEquals(err.stack, undefined)
       t.equals(err.stack.split('\n')[0], 'Error: ' + JSON.stringify({ hello: 'world' }))
       t.end()
@@ -60,7 +60,7 @@ const test = require('tape')
       extendCb((err, data) => {
         t.ok(err instanceof Error)
         t.equals(err.message, throwError)
-        t.equals(data)
+        t.equals(data, undefined)
         t.end()
       })(throwError)
     })

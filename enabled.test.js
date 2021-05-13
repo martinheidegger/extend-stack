@@ -31,9 +31,10 @@ test('[enabled]', t => {
             stackParts.push(currentPart)
             return
           }
-          const parts = /^\s{4}at (.*) \(([^:]*):(\d+):(\d+)\)$/.exec(line)
+          const reg = /^\s{4}at (.*) \((.*):(\d+):(\d+)\)$/
+          const parts = reg.exec(line)
           if (!parts) {
-            t.fail(`Unparsable line: #${lineNo}: ${line}`)
+            t.match(line, reg, `Unparsable line: #${lineNo}: ${line}`)
             return
           }
           lineNo += 1

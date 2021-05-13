@@ -1,3 +1,4 @@
+'use strict'
 exports.extendStack = function (err, offset) {
   return doExtend(err, offset, new Error().stack)
 }
@@ -9,9 +10,9 @@ function doExtend (err, offset, passStack) {
   if (!offset) {
     offset = 0
   }
-  var passLines = passStack.split('\n').slice(2 + offset)
+  let passLines = passStack.split('\n').slice(2 + offset)
   if (err.stack) {
-    var lines = err.stack.split('\n')
+    const lines = err.stack.split('\n')
     passLines.unshift(lines[0])
     if (lines.length > 1) {
       passLines.push('    caused by:')
