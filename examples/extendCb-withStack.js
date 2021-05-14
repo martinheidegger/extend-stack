@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const { extendCb } = require('..')
 
 function errorProne (cb) {

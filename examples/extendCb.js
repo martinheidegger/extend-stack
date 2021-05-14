@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const { extendCb } = require('..')
 const fs = require('fs')
 

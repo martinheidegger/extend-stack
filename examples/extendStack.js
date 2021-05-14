@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const { extendStack } = require('..')
 
 function subsystem (err) {
